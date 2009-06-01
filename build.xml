@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="FlexTasks Test" basedir="." default="compile">
+
+	<taskdef resource="flexTasks.tasks"  />
+	
+	<property name="FLEX_HOME" value="/usr/share/flex/sdks/4.0.0" />
+	<property name="APP_ROOT" value="." />
+	<property name="src" value="src" />
+	<property name="bin" value="bin-debug" />
+	<property name="output" value="bitlydemo" />
+	
+	<target name="compile">
+		<mxmlc file="${src}/BitlyDemo.as" debug="true" output="${bin}/${output}.swf">
+			<load-config filename="${FLEX_HOME}/frameworks/flex-config.xml" />
+			<source-path path-element="${FLEX_HOME}/frameworks" />
+			<source-path path-element="${src}" />
+		</mxmlc>
+	</target> 
+
+</project>
+
+
